@@ -194,7 +194,7 @@ class VectorTemplate extends BaseTemplate {
 				switch(o1.style.display) {
 					case 'block':
 						o1.style.display = 'none';
-						o2.innerHTML = 'Less';
+						o2.innerHTML = 'More';
 					break;
 					default:
 						o1.style.display = 'block';
@@ -233,8 +233,7 @@ class VectorTemplate extends BaseTemplate {
                                         # setup logo title and style that will appear on all pages here ?> 
                                         <a id="mVectorLogo" class="mFloater" href="/"
                                                 ><img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Mediawiki-logo.png"
-						<? # todo do not hard link ?>
-                                                />Mediawiki</a>
+                                                /><?= $this->html('sitename'); ?></a>
                                 </div>
                                 <br clear="all" />
 
