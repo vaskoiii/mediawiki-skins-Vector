@@ -96,6 +96,201 @@ class VectorTemplate extends BaseTemplate {
 		?>
 		<div id="mw-page-base" class="noprint"></div>
 		<div id="mw-head-base" class="noprint"></div>
+
+		<style>
+			/* responsive tables */
+			@media only screen and (max-width:480px) {
+				th,
+				td {
+					border: 1px solid #aaa;
+					border-bottom: none;
+					display: block; }
+				tr {
+					margin-bottom: 10px;
+					display: block;
+					border: none;
+					border-bottom: 1px solid #aaa; }
+				td:before {
+					content: 'test:';
+					content: attr(data-x) ":";
+					font-size: 75%; }
+				.mw-body {
+					10px; }
+				table.wikitable,
+				table {
+					border: none;
+					/* none didn't work */
+					background-color: transparent; }
+				.prefsection td.mw-label {
+					width: auto; }
+				td.mw-label {
+					text-align: left;
+					margin-left: -5px; }
+				.mw-label {
+					text-align: left;
+					font-size: 75%;
+					color: #333; }
+				.mw-page-info td:before,
+				fieldset td:before {
+					content: '';}
+					.wikitable.mw-page-info td {
+						border: none; }
+					.wikitable.mw-page-info tr {
+						border: 1px solid #aaa; }
+				select,
+				input {
+					max-width: 250px; }
+				fieldset {
+					border: 0 white;
+					padding: 0px;
+					margin: 0px; }
+					fieldset tr,
+					fieldset td {
+						border: none; }
+					
+				legend {
+					padding-left: 0px; }
+				legend {
+					padding-left: 0px; }
+				code {
+					word-wrap: break-word; }
+				.movepage-wrapper {
+					width: auto; }
+				#mw-htmlform-tokenwatchlist .mw-input {
+					/* watchlist token */
+					word-wrap: break-word;
+					word-break: break-word;
+					white-space: pre-line;
+					width: 250px;
+					}
+				/*
+					// data-x attributes can be added manually to tables (would be nice if automatic)
+					// still have to consider the printable version
+
+					// mediawiki was previously using inline styles and not pairing checkboxes together with their descriptions
+					// so had to hack mediawiki core and the arrays to empty by stripping out
+					// 'style' => 'white-space: nowrap'
+					// style="white-space: nowrap;"
+					./includes/specials/SpecialContributions.php
+					./includes/specials/SpecialProtectedpages.php
+					./includes/logging/LogEventsList.php
+
+					// mediawiki was previously using the size attribute on input elements
+					// vector.js addition (required) 
+					c1 = document.getElementsByTagName('input');
+					for(i = 0;i < c1.length; i++) {
+					    c1[i].setAttribute('size', 'auto');
+					    console.log(c1[i].size);
+					}
+				*/
+
+			}
+		</style>
+
+		<script>
+			function mVectorToggle() {
+				var o1 = document.getElementById('mw-navigation');
+				var o2 = document.getElementById('mVectorToggle');
+				switch(o1.style.display) {
+					case 'block':
+						o1.style.display = 'none';
+						o2.innerHTML = 'Less';
+					break;
+					default:
+						o1.style.display = 'block';
+						o2.innerHTML = 'Less';
+					break;
+				}
+			}
+		</script>
+
+                <style>
+                        .emptyPortlet {
+                                display: none; }
+                        #mVectorLogo {
+                                font-size: 38px;
+                                margin-right: 10px; }
+                                #mVectorLogo img {
+                                        width: auto;
+                                        height: 48px;
+                                        /* border: 1px solid green; */
+                                        margin: 0px 10px 10px 0px;
+                                        }
+                        #mVectorSearchForm {
+                                display: inline-block;
+                                }
+                        #mw-indicator-mw-helplink {
+                                display: none;
+                                }
+                        #mVectorSearchInput {
+                                width: 175px; }
+                        .mFloater {
+                                float: left; }
+                </style>
+                <div id="p-search" role="search">
+                        <form action="<?php $this->text( 'wgScript' ) ?>" id="mVectorSearchForm">
+                                <div style="display: inline;"><?
+                                        # setup logo title and style that will appear on all pages here ?> 
+                                        <a id="mVectorLogo" class="mFloater" href="/"
+                                                ><img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Mediawiki-logo.png"
+						<? # todo do not hard link ?>
+                                                />Mediawiki</a>
+                                </div>
+                                <br clear="all" />
+
+				<?/* <span<?php echo $this->config->get( 'VectorUseSimpleSearch' ) ? ' id="simpleSearch"' : '' ?>> */?>
+				<?php
+				echo $this->makeSearchInput(
+					array(
+						'id' => 'mVectorSearchInput',
+						'class' => 'mFloater',
+					)
+				);
+				echo Html::hidden( 'title', $this->get( 'searchtitle' ) );
+				echo $this->makeSearchButton(
+					'go',
+					array(
+						'id' => 'searchButton',
+						'class' => 'searchButton mFloater',
+					 )
+				); ?> 
+				<?/* </span> */?>
+				<div class="mFloater" style="margin: 2px 0px 0px 5px;">
+					<span style="color: #777;">::</span> <a href="#" id="mVectorToggle" onclick="mVectorToggle(); return false;">More</a>
+				</div>
+			</form>
+			<br clear="all" />
+		</div>
+		<div id="mw-navigation" style="display: none;">
+			<h2><?php $this->msg( 'navigation-heading' ) ?></h2>
+
+			<div id="mw-head">
+				<?php $this->renderNavigation( 'PERSONAL' ); ?>
+				<div id="left-navigation">
+					<?php $this->renderNavigation( array( 'NAMESPACES', 'VARIANTS' ) ); ?>
+				</div>
+				<div id="right-navigation">
+					<?php $this->renderNavigation( array( 'VIEWS', 'ACTIONS', 'SEARCH' ) ); ?>
+				</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="<?php
+					echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] )
+					?>" <?php
+					echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'p-logo' ) )
+					?>></a></div>
+				<?php $this->renderPortals( $this->data['sidebar'] ); ?>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
 		<div id="content" class="mw-body" role="main">
 			<a id="top"></a>
 
@@ -143,6 +338,7 @@ class VectorTemplate extends BaseTemplate {
 					<div class="usermessage"><?php $this->html( 'newtalk' ) ?></div>
 				<?php
 				}
+				/*
 				?>
 				<div id="jump-to-nav" class="mw-jump">
 					<?php $this->msg( 'jumpto' ) ?>
@@ -152,6 +348,7 @@ class VectorTemplate extends BaseTemplate {
 					<a href="#p-search"><?php $this->msg( 'jumptosearch' ) ?></a>
 				</div>
 				<?php
+				*/
 				$this->html( 'bodycontent' );
 
 				if ( $this->data['printfooter'] ) {
@@ -172,27 +369,6 @@ class VectorTemplate extends BaseTemplate {
 				?>
 				<div class="visualClear"></div>
 				<?php $this->html( 'debughtml' ); ?>
-			</div>
-		</div>
-		<div id="mw-navigation">
-			<h2><?php $this->msg( 'navigation-heading' ) ?></h2>
-
-			<div id="mw-head">
-				<?php $this->renderNavigation( 'PERSONAL' ); ?>
-				<div id="left-navigation">
-					<?php $this->renderNavigation( [ 'NAMESPACES', 'VARIANTS' ] ); ?>
-				</div>
-				<div id="right-navigation">
-					<?php $this->renderNavigation( [ 'VIEWS', 'ACTIONS', 'SEARCH' ] ); ?>
-				</div>
-			</div>
-			<div id="mw-panel">
-				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="<?php
-					echo htmlspecialchars( $this->data['nav_urls']['mainpage']['href'] )
-					?>" <?php
-					echo Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( 'p-logo' ) )
-					?>></a></div>
-				<?php $this->renderPortals( $this->data['sidebar'] ); ?>
 			</div>
 		</div>
 		<div id="footer" role="contentinfo"<?php $this->html( 'userlangattributes' ) ?>>
@@ -509,6 +685,7 @@ class VectorTemplate extends BaseTemplate {
 					<?php
 					break;
 				case 'SEARCH':
+/*
 					?>
 					<div id="p-search" role="search">
 						<h3<?php $this->html( 'userlangattributes' ) ?>>
@@ -544,6 +721,7 @@ class VectorTemplate extends BaseTemplate {
 						</form>
 					</div>
 					<?php
+*/
 
 					break;
 			}

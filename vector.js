@@ -3,6 +3,12 @@
  */
 jQuery( function ( $ ) {
 
+	c1 = document.getElementsByTagName('input');
+	for(i = 0;i < c1.length; i++) {
+	    c1[i].setAttribute('size', 'auto');
+	    console.log(c1[i].size);
+	}
+
 	/**
 	 * Collapsible tabs
 	 */
