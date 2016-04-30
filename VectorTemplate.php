@@ -163,6 +163,11 @@ class VectorTemplate extends BaseTemplate {
                                 width: 250px;
                                 }
                 </style>
+		<style>
+			/* enable wrapping for login pages */
+			.mw-input-with-label {
+				white-space: normal; }
+		</style>
                 <style><?
                         # keep last to do overrides
                         $a1 = array(
