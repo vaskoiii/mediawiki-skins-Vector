@@ -97,95 +97,131 @@ class VectorTemplate extends BaseTemplate {
 		<div id="mw-page-base" class="noprint"></div>
 		<div id="mw-head-base" class="noprint"></div>
 
-		<style>
-			/* responsive tables */
-			@media only screen and (max-width:480px) {
-				th,
-				td {
-					border: 1px solid #aaa;
-					border-bottom: none;
-					display: block; }
-				tr {
-					margin-bottom: 10px;
-					display: block;
-					border: none;
-					border-bottom: 1px solid #aaa; }
-				td:before {
-					content: 'test:';
-					content: attr(data-x) ":";
-					font-size: 75%; }
-				.mw-body {
-					10px; }
-				table.wikitable,
-				table {
-					border: none;
-					/* none didn't work */
-					background-color: transparent; }
-				.prefsection td.mw-label {
-					width: auto; }
-				td.mw-label {
-					text-align: left;
-					margin-left: -5px; }
-				.mw-label {
-					text-align: left;
-					font-size: 75%;
-					color: #333; }
-				.mw-page-info td:before,
-				fieldset td:before {
-					content: '';}
-					.wikitable.mw-page-info td {
-						border: none; }
-					.wikitable.mw-page-info tr {
-						border: 1px solid #aaa; }
-				select,
-				input {
-					max-width: 250px; }
-				fieldset {
-					border: 0 white;
-					padding: 0px;
-					margin: 0px; }
-					fieldset tr,
-					fieldset td {
-						border: none; }
-					
-				legend {
-					padding-left: 0px; }
-				legend {
-					padding-left: 0px; }
-				code {
-					word-wrap: break-word; }
-				.movepage-wrapper {
-					width: auto; }
-				#mw-htmlform-tokenwatchlist .mw-input {
-					/* watchlist token */
-					word-wrap: break-word;
-					word-break: break-word;
-					white-space: pre-line;
-					width: 250px;
-					}
-				/*
-					// data-x attributes can be added manually to tables (would be nice if automatic)
-					// still have to consider the printable version
+                <style> 
+                        /* table stuff */
+                        th,
+                        td {
+                                border: 1px solid #aaa;
+                                border-bottom: none;
+                                display: block; }
+                        tr {
+                                margin-bottom: 10px;
+                                margin-right: 10px;
+                                display: block;
+                                float: left;
+                                border: none;
+                                border-bottom: 1px solid #aaa; }
+                        td:before {
+                                content: attr(data-x) ": ";
+                                font-size: 75%; }
+                        table.wikitable,
+                        table.mw-datatable,
+                        table {
+                                min-width: 0px;
+                                margin-top: 15px;
+                                margin-bottom: 0px;
+                                border: none;
+                                background-color: transparent; }
+                        .prefsection td.mw-label {
+                                width: auto; }
+                        .mw-label {
+                                text-align: left;
+                                font-size: 75%;
+                                color: #333; }
+                                td.mw-label {
+                                        text-align: left; }
+                        .mw-page-info td:before,
+                        fieldset td:before {
+                                content: '';}
+                                .wikitable.mw-page-info td {
+                                        border: none; }
+                                .wikitable.mw-page-info tr {
+                                        border: 1px solid #aaa; }
+                        fieldset tr,
+                        fieldset td {
+                                border: none; }
+                </style>
+                <style>
+                        /* non-table stuff */
+                        .mw-body {
+                                10px; }
+                        select,
+                        input {
+                                max-width: 250px; }
 
-					// mediawiki was previously using inline styles and not pairing checkboxes together with their descriptions
-					// so had to hack mediawiki core and the arrays to empty by stripping out
-					// 'style' => 'white-space: nowrap'
-					// style="white-space: nowrap;"
-					./includes/specials/SpecialContributions.php
-					./includes/specials/SpecialProtectedpages.php
-					./includes/logging/LogEventsList.php
-
-					// mediawiki was previously using the size attribute on input elements
-					// vector.js addition (required) 
-					c1 = document.getElementsByTagName('input');
-					for(i = 0;i < c1.length; i++) {
-					    c1[i].setAttribute('size', 'auto');
-					    console.log(c1[i].size);
-					}
-				*/
-
-			}
-		</style>
+                        legend {
+                                padding-left: 0px; }
+                        code {
+                                word-wrap: break-word; }
+                        .movepage-wrapper {
+                                width: auto; }
+                        #mw-htmlform-tokenwatchlist .mw-input {
+                                /* watchlist token */
+                                word-wrap: break-word;
+                                word-break: break-word;
+                                white-space: pre-line;
+                                width: 250px;
+                                }
+                </style>
+                <style><?
+                        # keep last to do overrides
+                        $a1 = array(
+                                # x < 1000
+                                200,
+                                240,
+                                288,
+                                320,
+                                352,
+                                384,
+                                480,
+                                576,
+                                600,
+                                640,
+                                720,
+                                768,
+                                800,
+                                854,
+                                864,
+                                900,
+                                960,
+                                # x >= 1000
+                                1024,
+                                1050,
+                                1080,
+                                1152,
+                                1200,
+                                1280,
+                                1366,
+                                1400,
+                                1440,
+                                1536,
+                                1600,
+                                1680,
+                                1920,
+                                2048,
+                                2160,
+                                2560,
+                                3440,
+                                3840,
+                                4096,
+                        );
+                        foreach ($a1 as $k1 => $v1) { ?>
+                        @media only screen and (min-width:<?= (int)($v1 + 1); ?>px) {
+                                /* remember the opposite is wanted now */
+                                table.t<?= (int)$v1; ?>px {
+                                        margin-bottom: 15px; }
+                                .t<?= (int)$v1; ?>px th,
+                                .t<?= (int)$v1; ?>px td {
+                                        display: table-cell; }
+                                .t<?= (int)$v1; ?>px tr {
+                                        margin-bottom: 10px;
+                                        display: table-row;
+                                        float: none;
+                                        border: none; }
+                                .t<?= (int)$v1; ?>px td:before {
+                                        content: ''; }
+                        } <? } ?>
+                </style>
 
 		<script>
 			function mVectorToggle() {
@@ -205,6 +241,8 @@ class VectorTemplate extends BaseTemplate {
 		</script>
 
                 <style>
+			#footer {
+				margin-top: 20px; }
                         .emptyPortlet {
                                 display: none; }
                         #mVectorLogo {
