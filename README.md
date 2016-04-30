@@ -12,7 +12,7 @@ The X in tXpx stands for the desired resolution width, beyond which the table wi
 
 "Grow" support includes all vertical and horizontal resolutions listed at:
 
-    [https://en.wikipedia.org/wiki/Display_resolution](https://en.wikipedia.org/wiki/Display_resolution)
+[https://en.wikipedia.org/wiki/Display_resolution](https://en.wikipedia.org/wiki/Display_resolution)
 
 The data-x attributes need to be added manually to tables, which is more wordy than normal wiki syntax but increases readability when creating wiki tables in a text editor (especially with tables that have a lot of columns).
 
