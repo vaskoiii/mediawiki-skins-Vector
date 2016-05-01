@@ -97,6 +97,24 @@ class VectorTemplate extends BaseTemplate {
 		<div id="mw-page-base" class="noprint"></div>
 		<div id="mw-head-base" class="noprint"></div>
 
+		<div id="whoami">
+			<style>
+				#whoami {
+					position: absolute;
+					top: 2px;
+					font-size: small;
+					right: 10px; }
+			</style>
+			<?
+			# todo better way to get this?
+			$a1 = $this->getPersonalTools();
+			if (!empty($a1['userpage']['links'][0]['text']))
+				echo htmlentities($a1['userpage']['links'][0]['text']);
+			else
+				echo htmlentities($_SERVER['REMOTE_ADDR']);
+			?>
+		</div>
+
                 <style> 
                         /* table stuff */
                         th,
