@@ -28,3 +28,15 @@ The data-x attributes need to be added manually to tables, which is more wordy t
 | data-x="aTtRiBuTe2" | vAluE4
 |}
 ```
+
+Install
+-------
+Works by piggybacking off of the Vector skin (not yet standalone).
+```
+cd skins/
+git clone https://github.com/vaskoiii/wikitable-txpx.git
+vi ../LocalSettings.php
+ - wfLoadSkin('Vector');
+ + $wgDefaultSkin = "vector";
+ + wfLoadSkin('wikitable-txpx');
+```
