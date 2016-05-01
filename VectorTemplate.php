@@ -159,6 +159,13 @@ class VectorTemplate extends BaseTemplate {
                         fieldset td {
                                 border: none; }
                 </style>
+		<style>
+			table.mw_metadata {
+				width: 100%; }
+			.fullImageLink img {
+				max-width: 100%;
+				height: auto; }
+		</style>
                 <style>
                         /* non-table stuff */
                         .mw-body {
