@@ -46,10 +46,7 @@ class SkinVector extends SkinTemplate {
 	public function initPage( OutputPage $out ) {
 		parent::initPage( $out );
 
-		if ( $this->vectorConfig->get( 'VectorResponsive' ) ) {
-			$out->addMeta( 'viewport', 'width=device-width, initial-scale=1' );
-			$out->addModuleStyles( 'skins.vector.styles.responsive' );
-		}
+		$out->addMeta( 'viewport', 'width=device-width, initial-scale=1' );
 
 		$out->addModules( 'skins.vector.js' );
 	}
