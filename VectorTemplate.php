@@ -129,6 +129,8 @@ class VectorTemplate extends BaseTemplate {
                                 float: left;
                                 border: none;
                                 border-bottom: 1px solid #aaa; }
+			<? # use <table> only for attribute/value pairs (not layout) ie. spreadsheets ?>
+			<? # the : serves as a reminder to use data-x="attribute" (even with plain html) ?>
                         td:before {
                                 content: attr(data-x) ": ";
                                 font-size: 75%; }
@@ -163,6 +165,9 @@ class VectorTemplate extends BaseTemplate {
 			table.mw_metadata {
 				width: 100%; }
 			.fullImageLink img {
+				max-width: 100%;
+				height: auto; }
+			.image img {
 				max-width: 100%;
 				height: auto; }
 		</style>
