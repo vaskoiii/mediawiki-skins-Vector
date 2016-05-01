@@ -1,10 +1,10 @@
 Wikitable tXpx
 --------------
-Named based on class="wikitable tXpx" in new mediawiki syntax (supported themes only ie. this one), wikitable tXpx allows tables to "grow" when the screen extends beyond a certain pixel width.
+Named based on class="wikitable tXpx" in new mediawiki syntax (supported themes only ie. this one), wikitable tXpx starts with all tables broken apart but allows them to "grow" when the screen extends beyond a certain pixel width.
 
-Wikis should be mobile first and then "grow" elegantly to support larger screens in terms of virtual pixels while optimizing screen space and preserving data.
+No horizontal scrolling is required.
 
-Wikitable tXpx allows the same link to be used for both mobile and desktop wikis (different from wikipedia)
+The same link is used for both the mobile and desktop version of a wiki (different from wikipedia).
 
 Syntax and Example
 ------------------
