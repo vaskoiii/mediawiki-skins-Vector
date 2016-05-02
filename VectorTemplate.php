@@ -173,6 +173,8 @@ class VectorTemplate extends BaseTemplate {
 				.image img {
 					max-width: 100%;
 					height: auto; }
+			.printfooter {
+				clear: both; }
 		</style>
                 <style>
                         /* non-table stuff */
