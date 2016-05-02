@@ -167,9 +167,12 @@ class VectorTemplate extends BaseTemplate {
 			.fullImageLink img {
 				max-width: 100%;
 				height: auto; }
-			.image img {
-				max-width: 100%;
-				height: auto; }
+			.floatleft,
+			.floatright {
+				max-width: 100%; }
+				.image img {
+					max-width: 100%;
+					height: auto; }
 		</style>
                 <style>
                         /* non-table stuff */
