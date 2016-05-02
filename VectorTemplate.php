@@ -283,7 +283,7 @@ class VectorTemplate extends BaseTemplate {
                         .emptyPortlet {
                                 display: none; }
                         #mVectorLogo {
-                                font-size: 38px;
+                                font-size: 32px;
                                 margin-right: 10px; }
                                 #mVectorLogo img {
                                         width: auto;
@@ -307,7 +307,7 @@ class VectorTemplate extends BaseTemplate {
                                 <div style="display: inline;"><?
                                         # setup logo title and style that will appear on all pages here ?> 
                                         <a id="mVectorLogo" class="mFloater" href="/"
-                                                ><img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Mediawiki-logo.png"
+                                                ><img src="<?= $this->get('logopath'); ?>" alt=""
                                                 /><?= $this->html('sitename'); ?></a>
                                 </div>
                                 <br clear="all" />
