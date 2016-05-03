@@ -247,7 +247,7 @@ class VectorTemplate extends BaseTemplate {
                         );
 			# use minimal css and minify
 			foreach ($a1 as $k1 => $v1) {
-				echo "\n" . '@media only screen and (min-width:' . (int)$v1 . 'px) { ' .
+				echo "\n" . '@media (min-width:' . (int)$v1 . 'px) { ' .
 					'table.t' . (int)$v1 . 'px { ' .
 						'margin-bottom: 15px; } ' .
 					'.t' . (int)$v1 . 'px th, ' .
