@@ -1,6 +1,6 @@
 Wikitable tXpx
 --------------
-Named based on class="wikitable tXpx" in mediawiki syntax, the wikitable tXpx skin starts with all tables broken apart but allows them to "grow" when the screen extends beyond a certain pixel width.
+Named based on class="wikitable tXpx" in mediawiki syntax, the wikitable tXpx skin starts with all tables broken apart but allows them to "grow" on an individual basis when the screen extends to or beyond a certain pixel width.
 
 No horizontal scrolling is required.
 
