@@ -177,7 +177,7 @@ class VectorTemplate extends BaseTemplate {
 					height: auto; }
 			.printfooter {
 				clear: both; }
-			<? # index.php?title=a&diff=b&oldid=c ?> 
+			<? # /index.php?title=a&diff=b&oldid=c ?> 
 			table.diff {
 				table-layout: auto; }
 			table.diff col.diff-content,
@@ -196,6 +196,9 @@ class VectorTemplate extends BaseTemplate {
 			<?  # /File:a.png >> Show extended details ?> 
 			td ul.metadata-langlist {
 				display: inline-block; }
+			<?  # /Special:Preferences ?> 
+			#preferences fieldset td.mw-label {
+				width: auto; }
 		</style>
                 <style>
                         /* non-table stuff */
