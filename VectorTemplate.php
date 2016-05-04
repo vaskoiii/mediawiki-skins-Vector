@@ -186,6 +186,7 @@ class VectorTemplate extends BaseTemplate {
 			td.diff-marker {
 				display: none; }
 			td.diff-context,
+			td.diff-deletedline,
 			td.diff-addedline {
 				border-radius: 0; }
 			td.diff-context {
