@@ -1,6 +1,6 @@
 Wikitable tXpx
 --------------
-Named based on class="wikitable tXpx" in new mediawiki syntax (supported themes only ie. this one), wikitable tXpx starts with all tables broken apart but allows them to "grow" when the screen extends beyond a certain pixel width.
+Named based on class="wikitable tXpx" in mediawiki syntax, the wikitable tXpx skin starts with all tables broken apart but allows them to "grow" when the screen extends beyond a certain pixel width.
 
 No horizontal scrolling is required.
 
@@ -8,6 +8,10 @@ The same link is used for both the mobile and desktop version of a wiki (differe
 
 Syntax and Example
 ------------------
+Leveraging existing wikimarkup to inject a html tag attribute called data-x, wikitable tXpx will not conflict with existing wiki markup, but could potentially conflict with an existing skin that utilizes the arbitrary html tag attribute named data-x in a conflicting way. See:
+
+[http://www.w3schools.com/tags/att_global_data.asp](http://www.w3schools.com/tags/att_global_data.asp)
+
 The X in tXpx stands for the desired screen width, beyond which the table will "grow" into an html table.
 
 "Grow" support includes all vertical and horizontal resolutions listed at:
