@@ -160,7 +160,9 @@ class VectorTemplate extends BaseTemplate {
                         fieldset tr,
                         fieldset td {
                                 border: none; }
-                </style>
+                </style><?
+		# if edits are for a specific page mention it in a php comment
+		# (with irrelevant variables renamed starting with: a b c ...) ?> 
 		<style>
 			table.mw_metadata {
 				width: 100%; }
@@ -175,6 +177,24 @@ class VectorTemplate extends BaseTemplate {
 					height: auto; }
 			.printfooter {
 				clear: both; }
+			<? # index.php?title=a&diff=b&oldid=c ?> 
+			table.diff {
+				table-layout: auto; }
+			table.diff col.diff-content,
+			table.diff col.diff-marker {
+				width: auto; }
+			td.diff-marker {
+				display: none; }
+			td.diff-context,
+			td.diff-addedline {
+				border-radius: 0; }
+			td.diff-context {
+				border: 1px solid #ccc; }
+			table.diff td div {
+				display: inline-block; }
+			<?  # /File:a.png >> Show extended details ?> 
+			td ul.metadata-langlist {
+				display: inline-block; }
 		</style>
                 <style>
                         /* non-table stuff */
