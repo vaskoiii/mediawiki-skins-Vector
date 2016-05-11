@@ -193,12 +193,31 @@ class VectorTemplate extends BaseTemplate {
 				border: 1px solid #ccc; }
 			table.diff td div {
 				display: inline-block; }
-			<?  # /File:a.png >> Show extended details ?> 
+			<? # /File:a.png >> Show extended details ?> 
 			td ul.metadata-langlist {
 				display: inline-block; }
-			<?  # /Special:Preferences ?> 
+			<? # /Special:Preferences ?> 
 			#preferences fieldset td.mw-label {
 				width: auto; }
+			<? # /Special:ListFiles?limit=1 ?> 
+			<? # override style="width: 25%" with !important ?> 
+			td.TablePager_nav-first ,
+			td.TablePager_nav-prev ,
+			td.TablePager_nav-next ,
+			td.TablePager_nav-last {
+				border-bottom: 1px solid #aaa;
+				display: inline-block;
+				width: auto !important; }
+			td.TablePager_nav-first div ,
+			td.TablePager_nav-prev div ,
+			td.TablePager_nav-next div ,
+			td.TablePager_nav-last div {
+				display: inline-block; }
+			.TablePager_nav tr {
+				border-color: red;
+				border: 0px; }
+			.TablePager_nav {
+				width: 100%; }
 		</style>
                 <style>
                         /* non-table stuff */
