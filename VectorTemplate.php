@@ -214,7 +214,7 @@ class VectorTemplate extends BaseTemplate {
 			td.TablePager_nav-last div {
 				display: inline-block; }
 			.TablePager_nav tr {
-				border-color: red;
+				margin-bottom: 0px;
 				border: 0px; }
 			.TablePager_nav {
 				width: 100%; }
