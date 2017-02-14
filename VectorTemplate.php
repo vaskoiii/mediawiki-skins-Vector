@@ -229,6 +229,7 @@ class VectorTemplate extends BaseTemplate {
 
                         legend {
                                 padding-left: 0px; }
+			pre,
                         code {
                                 word-wrap: break-word; }
                         .movepage-wrapper {
